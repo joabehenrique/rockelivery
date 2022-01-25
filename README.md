@@ -1,10 +1,10 @@
 # [:hammer_and_wrench: Finishing..] SDS DSMovie
 
-![GitHub repo size](https://img.shields.io/github/repo-size/joabehenrique/sds-dsmovie?style=flat)
-![GitHub language count](https://img.shields.io/github/languages/count/joabehenrique/sds-dsmovie?style=flat)
-![GitHub forks](https://img.shields.io/github/forks/joabehenrique/sds-dsmovie?style=flat)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/joabehenrique/sds-dsmovie?style=flat)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/joabehenrique/sds-dsmovie?style=flat)
+![GitHub repo size](https://img.shields.io/github/repo-size/joabehenrique/rockelivery?style=flat)
+![GitHub language count](https://img.shields.io/github/languages/count/joabehenrique/rockelivery?style=flat)
+![GitHub forks](https://img.shields.io/github/forks/joabehenrique/rockelivery?style=flat)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/joabehenrique/rockelivery?style=flat)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/joabehenrique/rockelivery?style=flat)
 
 > Simple project developed ...
 
@@ -23,7 +23,7 @@ To install ..., follow these steps:
 1º Clone the repository.
 
 ```
->  git clone https://github.com/joabehenrique/sds-dsmovie.git
+>  git clone https://github.com/joabehenrique/rockelivery.git
 ```
 
 ## ☕ Using ...
@@ -31,7 +31,7 @@ To install ..., follow these steps:
 To use ..., follow these steps:
 
 ```
-project available at: https://jh-dsmovie.netlify.app/
+
 ```
 
 ## 📫 Contributing to Exlivery
@@ -65,10 +65,10 @@ We thank the following people who contributed to this project:
 
 ## 😄 Be one of the contributors<br>
 
-Do you want to be part of this project? Click [here](https://github.com/joabehenrique/sds-dsmovie/blob/master/CONTRIBUTING.md) and read how to contribute.
+Do you want to be part of this project? Click [here](https://github.com/joabehenrique/rockelivery/blob/master/CONTRIBUTING.md) and read how to contribute.
 
 ## 📝 License
 
-This project is under license. See the [license](https://github.com/joabehenrique/sds-dsmovie/blob/master/LICENSE.md) file for more details.
+This project is under license. See the [license](https://github.com/joabehenrique/rockelivery/blob/master/LICENSE.md) file for more details.
 
 [⬆ Back to top](#SDSDSMovie)<br>
