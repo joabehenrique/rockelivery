@@ -1,4 +1,4 @@
-defmodule Rockelivery.User do
+defmodule Rockelivery.User.User do
   use Ecto.Schema
   import Ecto.Changeset
 
