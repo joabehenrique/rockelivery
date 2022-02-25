@@ -6,19 +6,19 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/joabehenrique/rockelivery?style=flat)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/joabehenrique/rockelivery?style=flat)
 
-> Simple project developed ...
+> The project developed is an API for restaurant ordering.
 
 ## 💻 Requirements
 
 Before you begin, make sure you have met the following requirements:
 
-- You need the latest version of `...` on your machine.
+- You need the latest version of `Alixir/Phoenix` on your machine.
 
-If you need installation instructions, [click here]("...").
+If you need installation instructions, [click here](https://hexdocs.pm/phoenix/installation.html).
 
-## 🚀 Installing ...
+## 🚀 Installing Rockelivery
 
-To install ..., follow these steps:
+To install Rockelivery, follow these steps:
 
 1º Clone the repository.
 
@@ -26,22 +26,22 @@ To install ..., follow these steps:
 >  git clone https://github.com/joabehenrique/rockelivery.git
 ```
 
-## ☕ Using ...
+## ☕ Using Rockelivery
 
-To use ..., follow these steps:
-
-```
+To use Rockelivery, follow these steps:
 
 ```
 
-## 📫 Contributing to Exlivery
+```
 
-To contribute to Exlivery, follow these steps:
+## 📫 Contributing to Rockelivery
+
+To contribute to Rockelivery, follow these steps:
 
 1. Fork this repository.
 2. Create a branch: `git checkout -b <nome_branch>`.
 3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Send to the original branch: `git push origin Exlivery / <local>`
+4. Send to the original branch: `git push origin Rockelivery / <local>`
 5. Create the pull request.
 
 Alternatively, see the GitHub documentation at [how to create a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)..
