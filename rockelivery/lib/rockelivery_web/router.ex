@@ -2,11 +2,14 @@ defmodule RockeliveryWeb.Router do
   use RockeliveryWeb, :router
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug(:accepts, ["json"])
   end
 
   scope "/api", RockeliveryWeb do
-    pipe_through :api
+    pipe_through(:api)
+
+    get("/", WelcomeController, :index)
+    resources "/users", UsersController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
@@ -20,8 +23,8 @@ defmodule RockeliveryWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
-      pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: RockeliveryWeb.Telemetry
+      pipe_through([:fetch_session, :protect_from_forgery])
+      live_dashboard("/dashboard", metrics: RockeliveryWeb.Telemetry)
     end
   end
 end
