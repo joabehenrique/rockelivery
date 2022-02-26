@@ -12,7 +12,7 @@
 
 Before you begin, make sure you have met the following requirements:
 
-- You need the latest version of `Alixir/Phoenix` on your machine.
+- You need the latest version of `Elixir/Phoenix` on your machine.
 
 If you need installation instructions, [click here](https://hexdocs.pm/phoenix/installation.html).
 
