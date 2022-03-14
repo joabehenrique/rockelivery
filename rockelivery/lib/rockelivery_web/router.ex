@@ -1,15 +1,17 @@
 defmodule RockeliveryWeb.Router do
   use RockeliveryWeb, :router
+  alias RockeliveryWeb.Plugs.UUIDChecker
 
   pipeline :api do
     plug(:accepts, ["json"])
+    plug(UUIDChecker)
   end
 
-  scope "/api", RockeliveryWeb do
+  scope "/api/v1", RockeliveryWeb do
     pipe_through(:api)
 
     get("/", WelcomeController, :index)
-    resources "/user", UserController, except: [:new, :edit]
+    resources("/user", UserController, except: [:new, :edit])
   end
 
   # Enables LiveDashboard only for development
