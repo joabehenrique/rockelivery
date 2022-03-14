@@ -1,4 +1,4 @@
-# [:hammer_and_wrench: Working..] Rockelivery
+# 🚀 Rockelivery
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/joabehenrique/rockelivery?style=flat)
 ![GitHub language count](https://img.shields.io/github/languages/count/joabehenrique/rockelivery?style=flat)
@@ -12,7 +12,7 @@
 
 Before you begin, make sure you have met the following requirements:
 
-- You need the latest version of `Elixir/Phoenix` on your machine.
+- You need the latest version of `Elixir/Phoenix` and `PostgreSQL` on your machine.
 
 If you need installation instructions, [click here](https://hexdocs.pm/phoenix/installation.html).
 
@@ -25,14 +25,59 @@ To install Rockelivery, follow these steps:
 ```
 >  git clone https://github.com/joabehenrique/rockelivery.git
 ```
-
+2º Open the project in your vscode and run the command
+```
+> mix deps.get
+```
+3º Just run project
+```
+> mix phx.server
+```
 ## ☕ Using Rockelivery
 
 To use Rockelivery, follow these steps:
 
 ```
+Rocketlivery is a project where we use phoenix to manage new users, 
+delete, update their information or just search for existing users.
 
+Ecto was used for persisting the data in the PostgreSQL database,
+doing several validations before and error handling in the requests. 
 ```
+
+Getting a user
+```
+(GET) api/v1/user/{id}
+```
+Deleting a user
+```
+(DELETE) api/v1/user/{id}
+```
+Creating a user
+```
+(POST) api/v1/user
+
+{
+    "name": "Joabe Henrique",
+    "email": "henriquecidoz@hotmail.com",
+    "cep": "12345678",
+    "cpf": "12345678900",
+    "address": "Rua Cristovao, n 94º",
+    "password": "jaue7235!@",
+    "age": 20
+}
+```
+Changing a user
+```
+(PUT) api/v1/user/{id}
+
+{
+    "name": "Joabe Henrique Carvalho",
+    "email": "joabe.souza@gmail.com",
+    "cep": "87654321",
+}
+```
+
 
 ## 📫 Contributing to Rockelivery
 
@@ -70,5 +115,3 @@ Do you want to be part of this project? Click [here](https://github.com/joabehen
 ## 📝 License
 
 This project is under license. See the [license](https://github.com/joabehenrique/rockelivery/blob/master/LICENSE.md) file for more details.
-
-[⬆ Back to top](#Rockelivery)<br>
