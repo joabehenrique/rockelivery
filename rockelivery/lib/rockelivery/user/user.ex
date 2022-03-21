@@ -30,7 +30,7 @@ defmodule Rockelivery.User.User do
     struct
     |> cast(params, fields)
     |> validate_required(fields)
-    |> validate_length(:password_hash, min: 6)
+    |> validate_length(:password, min: 6)
     |> validate_length(:cep, is: 8)
     |> validate_length(:cpf, is: 11)
     |> validate_number(:age, greater_than_or_equal_to: 18)
