@@ -1,13 +1,13 @@
 defmodule Rockelivery.User.User do
   use Ecto.Schema
+
   import Ecto.Changeset
 
+  alias Rockelivery.Order.Order
+
   @primary_key {:id, :binary_id, autogenerate: true}
-
   @required_params [:age, :address, :cep, :cpf, :email, :password, :name]
-
   @update_params @required_params -- [:password]
-
   @derive {Jason.Encoder, only: [:id, :name, :age, :cpf, :address, :email]}
 
   schema "users" do
@@ -19,6 +19,8 @@ defmodule Rockelivery.User.User do
     field(:password, :string, virtual: true)
     field(:password_hash, :string)
     field(:name, :string)
+
+    has_many(:orders, Order)
 
     timestamps()
   end
