@@ -30,8 +30,11 @@ defmodule RockeliveryWeb.ErrorView do
   defp translate_errors(changeset) do
     traverse_errors(changeset, fn {msg, opts} ->
       Enum.reduce(opts, msg, fn {key, value}, acc ->
-        String.replace(acc, "%{#{key}}", to_string(value))
+        String.replace(acc, "%{#{key}}", convert_value(value))
       end)
     end)
   end
+
+  defp convert_value({:parameterized, Ecto.Enum, _map}), do: ""
+  defp convert_value(value), do: to_string(value)
 end
