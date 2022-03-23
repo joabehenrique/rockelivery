@@ -77,6 +77,42 @@ Changing a user
     "cep": "87654321",
 }
 ```
+Creating a item
+
+(_Possible Categories_: `food`, `desert`, `drink`.)
+```
+(POST) api/v1/item
+
+{
+    "description": "PIZZA PORTUGUESA - PifPaf ",
+    "category": "food",
+    "price": "21.98",
+    "photo": "https://www.aws.s3/pizza.png"
+}
+```
+Creating a order
+
+(_Possible Payment Method_: `money`, `credit_card`, `debit_card`.)
+```
+(POST) api/v1/order
+
+{
+    "items" : [
+        {
+            "id": "ba4ccd7e-94d5-4c7f-a76d-77ed9418bb46",
+            "quantity": 2
+        }, 
+        {
+            "id": "c4e8b1d9-afc3-4537-ad8e-2c42432488a6", 
+            "quantity" : 3
+        }
+    ], 
+    "user_id": "865e5769-1f64-4b9e-b2ef-cd137fafb020",
+    "address" : "Rua Cristovao 90",
+    "payment_method" : "money",
+    "comments" : "Mandar mensagem ao chegar"
+}
+```
 
 
 ## 📫 Contributing to Rockelivery
