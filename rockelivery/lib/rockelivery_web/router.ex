@@ -7,23 +7,27 @@ defmodule RockeliveryWeb.Router do
     plug(UUIDChecker)
   end
 
-  scope "/api/v1", RockeliveryWeb do
-    pipe_through(:api)
+  pipeline :auth do
+    plug(RockeliveryWeb.Auth.Pipeline)
+  end
 
-    resources("/user", UserController, except: [:new, :edit])
+  scope "/api/v1", RockeliveryWeb do
+    pipe_through([:api, :auth])
+
+    resources("/user", UserController, except: [:new, :edit, :create])
 
     post("/item", ItemController, :create)
 
     post("/order", OrderController, :create)
   end
 
-  # Enables LiveDashboard only for development
-  #
-  # If you want to use the LiveDashboard in production, you should put
-  # it behind authentication and allow only admins to access it.
-  # If your application does not have an admins-only section yet,
-  # you can use Plug.BasicAuth to set up some basic authentication
-  # as long as you are also using SSL (which you should anyway).
+  scope "/api/v1", RockeliveryWeb do
+    pipe_through(:api)
+
+    post("/user", UserController, :create)
+    post("/user/signin", UserController, :sign_in)
+  end
+
   if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
 
