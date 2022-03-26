@@ -1,6 +1,10 @@
 defmodule RockeliveryWeb.UserControllerTest do
   use RockeliveryWeb.ConnCase, async: true
+
   import Rockelivery.Factory
+  import Mox
+
+  alias Rockelivery.ViaCep.ClientMock
 
   describe "create/2" do
     test "when are params are valid, creates the user", %{conn: conn} do
@@ -13,6 +17,22 @@ defmodule RockeliveryWeb.UserControllerTest do
         "password" => "123456",
         "name" => "Joabe Henrique"
       }
+
+      expect(ClientMock, :get_cep_info, fn _cep ->
+        {:ok,
+         %{
+           "bairro" => "Sé",
+           "cep" => "01001-000",
+           "complemento" => "lado ímpar",
+           "ddd" => "11",
+           "gia" => "1004",
+           "ibge" => "3550308",
+           "localidade" => "São Paulo",
+           "logradouro" => "Praça da Sé",
+           "siafi" => "7107",
+           "uf" => "SP"
+         }}
+      end)
 
       response =
         conn
@@ -35,7 +55,8 @@ defmodule RockeliveryWeb.UserControllerTest do
     test "when there is some error, returns the error", %{conn: conn} do
       params = %{
         "age" => 12,
-        "cpf" => "123456789"
+        "cpf" => "123456789",
+        "cep" => "29163172"
       }
 
       response =
@@ -47,7 +68,6 @@ defmodule RockeliveryWeb.UserControllerTest do
         "message" => %{
           "address" => ["can't be blank"],
           "age" => ["must be greater than or equal to 18"],
-          "cep" => ["can't be blank"],
           "cpf" => ["should be 11 character(s)"],
           "email" => ["can't be blank"],
           "name" => ["can't be blank"],
