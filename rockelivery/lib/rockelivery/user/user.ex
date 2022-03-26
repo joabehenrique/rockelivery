@@ -25,6 +25,8 @@ defmodule Rockelivery.User.User do
     timestamps()
   end
 
+  def build(changeset), do: apply_action(changeset, :create)
+
   def changeset(params), do: generate_changeset(params, @required_params)
   def changeset(struct, params), do: generate_changeset(struct, params, @update_params)
 
