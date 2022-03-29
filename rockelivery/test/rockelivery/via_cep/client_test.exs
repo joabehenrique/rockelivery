@@ -15,7 +15,7 @@ defmodule Rockelivery.ViaCep.ClientTest do
 
       url = endpoint_url(bypass.port)
 
-      body = ~s({
+      body = ~s<{
         "cep": "01001-000",
         "logradouro": "Praça da Sé",
         "complemento": "lado ímpar",
@@ -26,7 +26,7 @@ defmodule Rockelivery.ViaCep.ClientTest do
         "gia": "1004",
         "ddd": "11",
         "siafi": "7107"
-      })
+      }>
 
       Bypass.expect(bypass, "GET", "#{cep}/json/", fn conn ->
         conn
