@@ -46,6 +46,18 @@ jobs:
     - name : Run Credo
       working-directory: ./rockelivery
       run: mix credo --strict
+    - name : Check coverage
+      working-directory: ./rockelivery
+      run: mix coveralls.json
+      env:
+        MIX_ENV: test
+    - name : Run codecov script
+      working-directory: ./rockelivery
+      run: $ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest -Uri https://uploader.codecov.io/latest/windows/codecov.exe -Outfile codecov.exe
+.\codecov.exe
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN}}
     - name: Run tests
       working-directory: ./rockelivery
       run: mix test
