@@ -37,15 +37,15 @@ jobs:
         path: deps
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
+    - name: Install dependencies
+      working-directory: ./rockelivery
+      run: mix deps.get
     - name: Check Formatting
       working-directory: ./rockelivery
       run: mix format --check-formatted
     - name : Run Credo
       working-directory: ./rockelivery
       run: mix credo --strict
-    - name: Install dependencies
-      working-directory: ./rockelivery
-      run: mix deps.get
     - name: Run tests
       working-directory: ./rockelivery
       run: mix test
