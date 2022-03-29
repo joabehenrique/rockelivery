@@ -24,7 +24,7 @@ defmodule Rockelivery.ViaCep.ClientTest do
         "uf": "SP",
         "ibge": "3550308",
         "gia": "1004",
-        "ddd": "11",
+        "ddd": "12",
         "siafi": "7107"
       }>
 
@@ -42,7 +42,7 @@ defmodule Rockelivery.ViaCep.ClientTest do
            "bairro" => "Sé",
            "cep" => "01001-000",
            "complemento" => "lado ímpar",
-           "ddd" => "11",
+           "ddd" => "12",
            "gia" => "1004",
            "ibge" => "3550308",
            "localidade" => "São Paulo",
