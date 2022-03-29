@@ -14,12 +14,10 @@ jobs:
 
     services:
       db:
-        image: postgres:11
-        ports: ['5433:5433']
+        image: postgres:12
+        ports: ['5432:5432']
         env: 
-          POSTGRES_PASSWORD: admin
-          POSTGRES_USER: admin
-          POSTGRES_DB: rockelivery_test
+          POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s

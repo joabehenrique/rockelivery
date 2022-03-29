@@ -2,10 +2,9 @@ use Mix.Config
 
 # Configure your database
 config :rockelivery, Rockelivery.Repo,
-  username: "admin",
-  password: "admin",
+  username: "postgres",
+  password: "postgres",
   database: "rockelivery_dev",
-  port: "5433",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
