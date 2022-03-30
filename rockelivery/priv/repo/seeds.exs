@@ -14,14 +14,12 @@ alias Rockelivery.Item.Item
 alias Rockelivery.Order.Order
 alias Rockelivery.Repo
 
-IO.puts("======Inserting user...======")
-
 user = %User{
   age: 27,
   address: "Rua paulista, 15",
   cep: "12345678",
-  cpf: "12345678900",
-  email: "henriqueciido@hotmail.com",
+  cpf: "78945612300",
+  email: "joabe.souza@hotmail.com",
   password: "123456",
   name: "Joabe Henrique"
 }
