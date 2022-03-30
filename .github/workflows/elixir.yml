@@ -72,7 +72,7 @@ jobs:
             ref: master # Check out main instead of the latest commit
             fetch-depth: 0 # Checkout the whole branch
       - run: git remote add gigalixir https://git.gigalixir.com/${{ secrets.GIGALIXIR_APP_NAME }}.git
-      - run: git subtree push gigalixir HEAD:refs/heads/master
+      - run: git subtree push --prefix rockelivery gigalixir HEAD:refs/heads/master
         
           
       - uses: actions/setup-python@v2
