@@ -38,26 +38,20 @@ jobs:
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
     - name: Install dependencies
-      working-directory: ./rockelivery
       run: mix deps.get
     - name: Check Formatting
-      working-directory: ./rockelivery
       run: mix format --check-formatted
     - name : Run Credo
-      working-directory: ./rockelivery
       run: mix credo --strict
     - name : Check coverage
-      working-directory: ./rockelivery
       run: mix coveralls.json
       env:
         MIX_ENV: test
     - name : Run codecov script
-      working-directory: ./rockelivery
       run: bash <(curl -s https://codecov.io/bash)
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN}}
     - name: Run tests
-      working-directory: ./rockelivery
       run: mix test
 
   deploy:
