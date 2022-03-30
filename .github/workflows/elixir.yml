@@ -76,16 +76,9 @@ jobs:
         with:
           python-version: 3.8.1
     
-      - name: Add api remote origin
-        run: |
-          git remote add gigalixir https://git.gigalixir.com/elementary-perfect-rhea.git/
-      - name: Deploy frontend to Gigalixir
-        run: |
-          git subtree push --prefix rockelivery gigalixir master
-          
-      - uses: mhanberg/gigalixir-action@v0.4.0
+      - uses: joabehenrique/gigalixir-action@v0.4.0
         with:
-          APP_SUBFOLDER: rockelivery  # Add only if you want to deploy an app that is not at the root of your repository
+          APP_SUBFOLDER: rockelivery/rockelivery  # Add only if you want to deploy an app that is not at the root of your repository
           GIGALIXIR_APP: elementary-perfect-rhea # Feel free to also put this in your secrets
           GIGALIXIR_CLEAN: true # defaults to false
           GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
