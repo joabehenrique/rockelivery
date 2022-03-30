@@ -59,8 +59,6 @@ jobs:
     - name: Run tests
       working-directory: ./rockelivery
       run: mix test
-  test: 
-    # A job to run your tests, linters, etc
 
   deploy:
     needs: build # Will only run if the test job succeeds
