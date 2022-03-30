@@ -68,11 +68,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        run: gigalixir git:remote ${{ secrets.GIGALIXIR_APP_NAME }}
-        run: git subtree push gigalixir HEAD:refs/heads/master
         with:
-          ref: master # Check out main instead of the latest commit
-          fetch-depth: 0 # Checkout the whole branch
+            ref: master # Check out main instead of the latest commit
+            fetch-depth: 0 # Checkout the whole branch
+      - run: gigalixir git:remote ${{ secrets.GIGALIXIR_APP_NAME }}
+      - run: git subtree push gigalixir HEAD:refs/heads/master
+        
           
       - uses: actions/setup-python@v2
         with:
