@@ -71,17 +71,14 @@ jobs:
         with:
             ref: master # Check out main instead of the latest commit
             fetch-depth: 0 # Checkout the whole branch
-      - run: git remote add gigalixir https://git.gigalixir.com/${{ secrets.GIGALIXIR_APP_NAME }}.git
-      - run: git subtree push --prefix rockelivery gigalixir HEAD:refs/heads/master
-        
-          
+  
       - uses: actions/setup-python@v2
         with:
           python-version: 3.8.1
     
       - uses: mhanberg/gigalixir-action@v0.4.0
         with:
-          APP_SUBFOLDER: rockelivery/rockelivery  # Add only if you want to deploy an app that is not at the root of your repository
+          APP_SUBFOLDER: rockelivery  # Add only if you want to deploy an app that is not at the root of your repository
           GIGALIXIR_APP: elementary-perfect-rhea # Feel free to also put this in your secrets
           GIGALIXIR_CLEAN: true # defaults to false
           GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
